@@ -19,7 +19,7 @@ keywords = ["exam", "examination", "psle", "o levels", "a levels",
 mask = posts.apply(lambda x: x.map(lambda s: search_string(s, keywords)))
 
 # Filter the database
-filtered_posts = posts.loc[keywords.any(axis=1)]
+filtered_posts = posts.loc[mask.any(axis=1)]
 
 
 print(filtered_posts.head().to_string())
